@@ -416,6 +416,21 @@ module.exports = function (grunt) {
         'svgmin'
       ]
     },
+    
+    buildcontrol: {
+      options: {
+          dir: 'dist',
+          commit: true,
+          push: true,
+          message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+      },
+      heroku: {
+          options: {
+              remote: 'git@heroku.com:heroku-app-1985.git',
+              branch: 'master'
+          }
+      }
+   },
 
     // Test settings
     karma: {
@@ -480,4 +495,5 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+  
 };
