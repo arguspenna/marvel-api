@@ -39,5 +39,21 @@
   },
   "dependencies": {
     "express": "^4.17.2"
-  }
+  },
+  "version": "1.0.0",
+  "main": "Gruntfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arguspenna/Desafio-Qintess.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arguspenna/Desafio-Qintess/issues"
+  },
+  "homepage": "https://github.com/arguspenna/Desafio-Qintess#readme",
+  "description": ""
 }

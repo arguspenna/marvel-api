@@ -1,14 +1,10 @@
-const express = require('express');
-const path = require('path');
-const nomeApp = process.env.npm_package_name;
-const app = express();
+var express = require('express');
+var path = require('path');
+var app = express();
 
-app.use(express.static(`${__dirname}/dist/${nomeApp}`));
-
-app.get('/*', (req, res) => {
-res.sendFile(path.join(`${__dirname}/dist/${nomeApp}/index.html`));
+app.get('/', function (req, res) {
+	res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.listen(process.env.PORT || 3000, function(){
-    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-  });
+app.use(express.static(__dirname)); // set static files location, in this case the route, add a file name if not
+app.listen(process.env.PORT || 3000);
