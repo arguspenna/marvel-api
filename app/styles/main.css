@@ -7,6 +7,39 @@
 
 body {
   padding: 0;
+  background-color: #e8ecef;
+}
+
+.recursive-image{
+  border-radius: 20px; 
+  box-shadow: 0px 16px 27px 1px rgba(0,0,0,0.2); 
+  margin-bottom: 30px;
+}
+
+.description-text {
+  font-size: 24px !important; 
+  line-height: 1.6 !important;
+  color:#777;
+  margin-bottom: 40px;
+}
+
+.inputSearch{
+  padding: 30px 20px !important;
+}
+
+.thumbnail-result{
+  margin: 40px 0;
+  border-radius: 20px; 
+  box-shadow: 0px 16px 27px 1px rgba(0,0,0,0.2); 
+  padding: 20px;
+  background-color: #fff;
+}
+.thumbnail-result img{
+  margin-bottom: 30px;
+  border-radius: 15px;
+}
+.thumbnail-result p{
+  font-size: 24px;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -80,4 +113,6 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+
+  
 }

@@ -1,16 +1,28 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+<div class="d-flex justify-content-center align-items-center p-5">
+  <img class="w-50 " src="images/marvel_logo.png"><br>
+</div>
+  
 </div>
 
-<div class="list-group" ng-init="main.onInit()">
-  <button type="button" class="list-group-item">Cras justo odio</button>
-  <button type="button" class="list-group-item">Dapibus ac facilisis in</button>
-  <button type="button" class="list-group-item">Morbi leo risus</button>
-  <button type="button" class="list-group-item">Porta ac consectetur ac</button>
-  <button type="button" class="list-group-item">Vestibulum at eros</button>
+<div class="form-group d-flex flex-column">
+  <input type="text" class="form-control inputSearch" placeholder="Sobre qual herói quer pesquisar?" ng-model="mainCtrl.HeroFilter" ng-change="mainCtrl.disableBtn(mainCtrl.HeroFilter)">
 </div>
+<button class="btn btn-default btn-primary w-100 mb-4" type="button" ng-click="mainCtrl.SearchHeros(mainCtrl.HeroFilter)">Pesquisar</button>
+      
+<h1 ng-if="mainCtrl.herosList.length > 0">Resultados:</h1>
+<div class="row">
+  <div class="col-md-4" ng-repeat="(key, hero) in mainCtrl.herosList">
+    <div class="thumbnail thumbnail-result d-flex flex-column justify-content-between">
+      <img class="w-100" ng-src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}">
+      <div class="caption mb-4">
+        <h2>{{hero.name}}</h2>
+        <p ng-show="{{hero.description != ''}}">{{hero.description}}</p>
+        <p ng-show="{{hero.description == ''}}">Descrição não disponível</p>
+      </div>
+      <button class="btn btn-primary btn-lg btn-block" ng-click="mainCtrl.editHero(hero)" flex>Detalhes</button>
+    </div>
+  </div>
+</div>
+<!-- <div class="list-group" ng-if="mainCtrl.herosList.length > 0">
+  <button ng-repeat="(key, hero) in mainCtrl.herosList" type="button" class="list-group-item" ng-click="mainCtrl.editHero(hero)">{{hero.name}}</button>
+</div> -->

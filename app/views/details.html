@@ -1,0 +1,24 @@
+<div class="row" ng-init="detailCtrl.OnLoad()">
+    <div class="col-12 col-md-6">
+        <h1 class="mb-1 mt-4">{{detailCtrl.hero.name}}</h1>
+        <div class="text-center" flex>
+            <img class="w-100 recursive-image mt-2" ng-src="{{detailCtrl.hero.thumbnail.path}}.{{detailCtrl.hero.thumbnail.extension}}">
+        </div>
+        
+        <p class="description-text"> {{detailCtrl.heroHasDescription()}}</p>
+
+        <h2 class="mb-4">Aparece em:</h2>
+    </div>
+    <div class="col-12 col-md-6">
+        <div class="panel panel-default" class="scrollable-panel">
+            <!-- Default panel contents -->
+            <!-- <div class="panel-heading">Comics <span class="badge">{{detailCtrl.hero.comics.items.length}}</span></div> -->
+            
+            <ul class="list-group" ng-if="detailCtrl.hero.comics.items.length > 0">
+              <li ng-repeat="comic in detailCtrl.hero.comics.items" class="list-group-item">{{comic.name}}</li>
+            </ul>
+          </div>
+    </div>
+</div>
+
+
