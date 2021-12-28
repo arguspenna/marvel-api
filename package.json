@@ -34,7 +34,7 @@
     "postinstall": "ng build --aot --prod"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": "14.x"
   },
   "dependencies": {
     "express": "^4.17.2"
