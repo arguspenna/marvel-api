@@ -149,7 +149,7 @@ angular.module('desafioApp')
         };
 
         vm.getHeroDetails = function(heroId){
-            let url = "https://gateway.marvel.com/v1/public/characters/"+heroId;
+            var url = "https://gateway.marvel.com/v1/public/characters/"+heroId;
             return $http.get(url,{params: {apikey: "38b1589a4602db99bea14aebbc96fb99"}});
         };
     }
