@@ -37,7 +37,7 @@
         .then(function(response){
           vm.afterSearch = true;
           if(vm.herosList.length > 0){
-            vm.herosList.push(...response.data.data.results);
+            vm.herosList = vm.herosList.concat(response.data.data.results);
           }else{
             vm.herosList = response.data.data.results;
           }
